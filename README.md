@@ -12,8 +12,9 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
-
-* Database initialization
+* 
+Database initializatio
+n
 
 * How to run the test suite
 
