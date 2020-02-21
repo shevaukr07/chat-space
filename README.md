@@ -28,3 +28,12 @@
 ### Association
 - belongs_to :user
 - has_many :tweets
+
+## groups_usersテーブル
+|column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false|
+|group_id|integer|null: false|
+### association
+- belongs_to :user
+- belongs_to :group
