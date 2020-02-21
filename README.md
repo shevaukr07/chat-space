@@ -17,11 +17,11 @@
 |------|----|-------|
 |text|text||
 |image|text||
-|user_id|references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key:true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key:true|
 ### Association
 - belongs_to :user
-- belongs_to :groups
+- belongs_to :group
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -35,8 +35,8 @@
 ## groups_usersテーブル
 |column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 ### association
 - belongs_to :user
 - belongs_to :group
