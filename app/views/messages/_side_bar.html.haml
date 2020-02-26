@@ -1,4 +1,20 @@
 .side-bar
- .side-header
- .groups
-
+  .side-hedder
+    .side-hedder__box
+      %p.side-hedder__box__username masa
+      %ul.side-hedder__box__menu 
+        %li.side-hedder__box__new-group
+          = link_to '#' do 
+            = icon('fas', 'edit')
+        %li.side-hedder__box__edit-user 
+          = link_to '#' do 
+            = icon('fas', 'cog') 
+  .side-groups
+    %p.side-groups__name-box 
+      techcamp
+    %p.side-groups__massage-box 
+      まだメッセージがありません
+    %p.side-groups__name-box 
+      techcamp
+    %p.side-groups__massage-box 
+      まだメッセージがありません
