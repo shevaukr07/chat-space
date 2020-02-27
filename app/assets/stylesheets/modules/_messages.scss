@@ -17,7 +17,7 @@
    display: flex;
    align-items: center;
    color: white;
-   .side-hedder__box{
+   &__box{
      display: flex;
      justify-content: space-between;
      width: 100%;
@@ -91,13 +91,13 @@
     height: calc(100vh - 190px);
     background-color: #fafafa;
   }
-    .messages__name{
+   .messages__name{
       display: flex;
       padding-top: 35px;
       font-size: 16px;
       color: #333333;
     }
-      .messages__date{
+    .messages__date{
         color: #999999;
         font-size: 12px;
         margin-left: 5px;
@@ -123,14 +123,14 @@
           width: 100%;
           position: relative;  
 
-          .input-box__text{
+          &__text{
             height: 50px;
             width: 100%;
             color: #434A54;
             border-style: none;
             padding: 0 40px 0 10px;
           }
-          .input-box__image{
+          &__image{
             position: absolute;
             top: 10px;
             right: 10px;
