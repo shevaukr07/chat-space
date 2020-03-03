@@ -13,8 +13,8 @@
   .side-groups
     - current_user.groups.each do |group|
       .group
-        = link_to '#' do
-          .group__name
+        = link_to group_messages_path(group) do
+          .side-groups__name-box
             = group.name
-        %p.side-groups__massage-box
-          メッセージはまだありません。
+          %p.side-groups__massage-box
+            = group.show_last_message
