@@ -4,7 +4,7 @@
    %h2.main-header__leftbox__current-group
     = @group.name
     %ul.main-header__leftbox__member-list
-     member :
+     member: 
      %li.main-header__leftbox__memberlist__member
       - @group.users.each do |user|
        = user.name
@@ -12,17 +12,18 @@
    = link_to 'Edit', edit_group_path(@group) 
  .messages
   = render @messages
-  .messages__name
+    
+  -# .messages__name
   -#  masa
-   .messages__date
+  -#  .messages__date
     2019/11/20/(wed) 17:43:01
-  .messages__comments
+  -# .messages__comments
   -#  おはよう！
-  .messages__name
+  -# .messages__name
   -#  masa
-   .messages__date
+  -#  .messages__date
     2019/11/20/(wed) 17:43:34
-  .messages__comments
+  -# .messages__comments
   -#  今日は夜から雨
 
 
