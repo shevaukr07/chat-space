@@ -55,7 +55,7 @@ $('#new_message').on('submit', function(e){
     var html = buildHTML(data);
     $('.messages').append(html);
     $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
-    $('form')[0].reset();
+    $('#new_message')[0].reset();
   })
    .fail(function(){
      alert('error');
