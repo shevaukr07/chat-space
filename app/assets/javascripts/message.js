@@ -2,13 +2,13 @@ $(function(){
   function buildHTML(message){
    if ( message.image ) {
      var html =
-      `<div class="message">
+      `<div class="message" data-message-id=${message.id}>
          <div class="upper-message">
            <div class="upper-message__user-name">
              ${message.user_name}
            </div>
            <div class="upper-message__date">
-             ${message.created_at}
+             ${message.date}
            </div>
          </div>
          <div class="lower-message">
@@ -21,13 +21,13 @@ $(function(){
      return html;
    } else {
      var html =
-      `<div class="message">
+      `<div class="message" data-message-id=${message.id}>
          <div class="upper-message">
            <div class="upper-message__user-name">
              ${message.user_name}
            </div>
            <div class="upper-message__date">
-             ${message.created_at}
+             ${message.date}
            </div>
          </div>
          <div class="lower-message">
@@ -53,8 +53,13 @@ $('#new_message').on('submit', function(e){
  })
   .done(function(data){
     var html = buildHTML(data);
-    $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});  
+    $('.messages').append(html);
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
     $('form')[0].reset();
   })
-})
+   .fail(function(){
+     alert('error');
+   });
+   return false;
+ });
 });
