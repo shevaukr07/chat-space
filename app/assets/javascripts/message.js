@@ -29,8 +29,8 @@ $(function(){
              ${message.date}
            </div>
          </div>
-         <div class="lower-message">
-           <p class="lower-message__content">
+         <div class="message__lower-message">
+           <p class="message__lower-message__content">
              ${message.content}
            </p>
          </div>
@@ -54,29 +54,29 @@ $(function(){
   };
  
 $('#new_message').on('submit', function(e){
- e.preventDefault();
- var formData = new FormData(this);
- var url = $(this).attr('action')
+  e.preventDefault();
+  var formData = new FormData(this);
+  var url = $(this).attr('action')
 
- $.ajax({
-   url: url,
-   type: "POST",
-   data: formData,
-   dataType: 'json',
-   processData: false,
-   contentType: false
- })
-  .done(function(data){
-    var html = buildHTML(data);
-    $('.messages').append(html);
-    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
-    $('#new_message')[0].reset();
+  $.ajax({
+    url: url,
+    type: "POST",
+    data: formData,
+    dataType: 'json',
+    processData: false,
+    contentType: false
   })
-   .fail(function(){
-     alert('error');
-   });
-   return false;
- });
+    .done(function(data){
+      var html = buildHTML(data);
+      $('.messages').append(html);
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
+      $('#new_message')[0].reset();
+    })
+    .fail(function(){
+      alert('error');
+    });
+    return false;
+  });
 
  var reloadMessages = function() {
   var last_message_id = $('.message:last').data("message-id");
@@ -101,6 +101,6 @@ $('#new_message').on('submit', function(e){
   });
  };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-   setInterval(reloadMessages, 7000);
+    setInterval(reloadMessages, 5000);
  }
 });
